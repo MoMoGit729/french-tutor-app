@@ -230,7 +230,10 @@ body {
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--charcoal);
+  cursor: pointer;
+  transition: opacity 0.15s;
 }
+.app-title:hover { opacity: 0.65; }
 .header-controls { display: flex; align-items: center; gap: 8px; }
 
 /* ── Chat area ───────────────────────────────────────────────────────────── */
@@ -591,6 +594,14 @@ body {
   transition: color 0.15s;
 }
 .text-btn:hover { color: var(--fr-blue); }
+.text-btn--quiet { opacity: 0.5; text-decoration: none; }
+.text-btn--quiet:hover { opacity: 1; color: var(--charcoal-light); }
+
+.post-lesson-bar {
+  padding: 16px 16px 8px;
+  display: flex;
+  justify-content: center;
+}
 
 .speech-muted #speakerIcon path,
 .speech-muted #speakerIcon line { stroke: var(--charcoal-light); opacity: 0.4; }

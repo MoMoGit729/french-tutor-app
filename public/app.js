@@ -17,7 +17,10 @@ const sendBtn        = document.getElementById('sendBtn');
 const micBtn         = document.getElementById('micBtn');
 const micStatus      = document.getElementById('micStatus');
 const startBtn       = document.getElementById('startLesson');
-const endBtn         = document.getElementById('endLesson');
+const saveExitBtn    = document.getElementById('saveAndExit');
+const exitBtn        = document.getElementById('exitLesson');
+const returnHomeBtn  = document.getElementById('returnHome');
+const appTitle       = document.getElementById('appTitle');
 const toggleSidebar  = document.getElementById('toggleSidebar');
 const sidebarClose   = document.getElementById('sidebarClose');
 const sidebar        = document.getElementById('sidebar');
@@ -249,35 +252,17 @@ function renderWelcome() {
   const { learner, lessonState, patterns } = appState;
   document.getElementById('welcomeSessionNum').textContent = learner.currentLesson;
 
-  let recommended = null;
+  const current = patterns.find(p => p.id === lessonState.currentPattern);
+
   let label = 'up next';
-
-  const fragile = patterns.filter(p => p.status === 'fragile');
-  if (fragile.length) { recommended = fragile[0]; label = 'needs a revisit'; }
-
-  if (!recommended) {
-    const current = patterns.find(p => p.id === lessonState.currentPattern);
-    if (current) { recommended = current; label = 'up next'; }
-  }
-
-  if (!recommended) {
-    const stabilizing = patterns.filter(p => p.status === 'stabilizing');
-    if (stabilizing.length) { recommended = stabilizing[0]; label = 'keep building'; }
-  }
-
-  if (!recommended) {
-    const fresh = patterns.filter(p => p.status === 'exposure only');
-    if (fresh.length) { recommended = fresh[0]; label = 'ready to try'; }
+  if (current) {
+    if (current.status === 'fragile') label = 'needs a revisit';
+    else if (current.status === 'stabilizing') label = 'keep building';
+    else if (current.status === 'exposure only') label = 'ready to try';
   }
 
   document.getElementById('welcomeRecommendLabel').textContent = label;
-  document.getElementById('welcomePatternName').textContent = recommended ? recommended.pattern : '—';
-
-  if (recommended && recommended.id !== lessonState.currentPattern) {
-    appState.lessonState.currentPattern = recommended.id;
-    appState.lessonState.currentSection = recommended.section;
-    appState.lessonState.currentBooklet = recommended.booklet;
-  }
+  document.getElementById('welcomePatternName').textContent = current ? current.pattern : '—';
 }
 
 document.getElementById('welcomeChoose').addEventListener('click', () => {
@@ -440,11 +425,27 @@ function hideTyping() {
 /* ── Lesson flow ─────────────────────────────────────────────────────────── */
 startBtn.addEventListener('click', startLesson);
 
+function goHome() {
+  lessonActive = false;
+  conversationMessages = [];
+  sendBtn.disabled = false;
+  const inner = document.querySelector('.chat-inner');
+  if (inner) inner.remove();
+  document.getElementById('lessonInputPanel').style.display = '';
+  document.getElementById('postLessonPanel').style.display = 'none';
+  inputArea.style.display = 'none';
+  welcomeScreen.style.display = '';
+  renderSidebar();
+  renderWelcome();
+}
+
 async function startLesson() {
   lessonActive = true;
-  welcomeScreen.remove();
+  welcomeScreen.style.display = 'none';
   inputArea.style.display = '';
 
+  const existing = document.querySelector('.chat-inner');
+  if (existing) existing.remove();
   const chatInner = document.createElement('div');
   chatInner.className = 'chat-inner';
   chatArea.appendChild(chatInner);
@@ -496,7 +497,7 @@ async function sendToTutor(messages) {
   return data.reply;
 }
 
-async function endLesson() {
+async function saveAndExit() {
   if (!lessonActive) return;
   lessonActive = false;
   sendBtn.disabled = true;
@@ -527,21 +528,31 @@ async function endLesson() {
 
     await saveState();
     renderSidebar();
-    renderWelcome();
 
     const coachNote = data.reply
       .replace(/:::CHECKPOINT:::[\s\S]*?:::CHECKPOINT:::/g, '')
       .trim();
     if (coachNote) renderCoachNote(coachNote);
+
+    document.getElementById('lessonInputPanel').style.display = 'none';
+    document.getElementById('postLessonPanel').style.display = '';
   } catch (e) {
     hideTyping();
-    renderMessage('tutor', 'There was an error saving your lesson. Please try again.');
+    lessonActive = true;
+    sendBtn.disabled = false;
+    renderMessage('tutor', "Claudette couldn't save this session. Please try again, or use Exit to leave without saving.");
   }
-
-  inputArea.style.display = 'none';
 }
 
-endBtn.addEventListener('click', endLesson);
+function exitLesson() {
+  if (!lessonActive) return;
+  goHome();
+}
+
+saveExitBtn.addEventListener('click', saveAndExit);
+exitBtn.addEventListener('click', exitLesson);
+returnHomeBtn.addEventListener('click', goHome);
+appTitle.addEventListener('click', () => { if (lessonActive) exitLesson(); });
 
 /* ── Input controls ──────────────────────────────────────────────────────── */
 sendBtn.addEventListener('click', sendMessage);

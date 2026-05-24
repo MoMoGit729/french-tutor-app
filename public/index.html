@@ -6,12 +6,12 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Le Tuteur" />
+  <meta name="apple-mobile-web-app-title" content="Claudette" />
   <meta name="theme-color" content="#1e1e2e" />
   <link rel="manifest" href="/manifest.json" />
   <link rel="apple-touch-icon" href="/icon.svg" />
   <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-  <title>Le Tuteur</title>
+  <title>Claudette</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -63,7 +63,7 @@
               <rect x="20" y="0" width="10" height="30" fill="#ED2939"/>
             </g>
           </svg>
-          <h1 class="app-title">Le&nbsp;Tuteur</h1>
+          <h1 class="app-title" id="appTitle">Claudette</h1>
         </div>
         <div class="header-controls">
           <button class="icon-btn" id="toggleSpeech" title="Toggle tutor speech">
@@ -78,14 +78,14 @@
         <div class="welcome-screen" id="welcomeScreen">
           <!-- Default view -->
           <div id="welcomeDefault">
-            <p class="welcome-subtitle">Paul Noble Method</p>
+            <p class="welcome-subtitle">Claudette, La Tutrice</p>
             <h2 class="welcome-heading">Bonjour.</h2>
             <div class="welcome-continue-block">
               <p class="welcome-continue-label">Session <span id="welcomeSessionNum">1</span></p>
               <p class="welcome-recommend-label" id="welcomeRecommendLabel">up next</p>
               <p class="welcome-pattern-name" id="welcomePatternName">—</p>
             </div>
-            <button class="btn-primary" id="startLesson">Begin</button>
+            <button class="btn-primary" id="startLesson">Continue</button>
             <button class="text-btn welcome-choose" id="welcomeChoose">Choose a different starting point</button>
           </div>
           <!-- Pattern picker view -->
@@ -98,30 +98,38 @@
       </div>
 
       <div class="input-area" id="inputArea" style="display:none">
-        <div class="input-row">
-          <textarea
-            id="userInput"
-            class="user-input"
-            placeholder="À vous…"
-            rows="1"
-            autocomplete="off"
-            spellcheck="false"
-          ></textarea>
-          <button class="icon-btn mic-btn" id="micBtn" title="Speak your answer">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="7" y="2" width="6" height="10" rx="3"/>
-              <path d="M3 10a7 7 0 0 0 14 0"/><line x1="10" y1="17" x2="10" y2="20"/>
-            </svg>
-          </button>
-          <button class="send-btn" id="sendBtn">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="2" y1="10" x2="18" y2="10"/><polyline points="12,4 18,10 12,16"/>
-            </svg>
-          </button>
+        <div id="lessonInputPanel">
+          <div class="input-row">
+            <textarea
+              id="userInput"
+              class="user-input"
+              placeholder="À vous…"
+              rows="1"
+              autocomplete="off"
+              spellcheck="false"
+            ></textarea>
+            <button class="icon-btn mic-btn" id="micBtn" title="Speak your answer">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2" width="6" height="10" rx="3"/>
+                <path d="M3 10a7 7 0 0 0 14 0"/><line x1="10" y1="17" x2="10" y2="20"/>
+              </svg>
+            </button>
+            <button class="send-btn" id="sendBtn">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="2" y1="10" x2="18" y2="10"/><polyline points="12,4 18,10 12,16"/>
+              </svg>
+            </button>
+          </div>
+          <div class="input-footer">
+            <button class="text-btn" id="saveAndExit">Save &amp; exit</button>
+            <button class="text-btn text-btn--quiet" id="exitLesson">Exit</button>
+            <span class="mic-status" id="micStatus"></span>
+          </div>
         </div>
-        <div class="input-footer">
-          <button class="text-btn" id="endLesson">End lesson &amp; save</button>
-          <span class="mic-status" id="micStatus"></span>
+        <div id="postLessonPanel" style="display:none">
+          <div class="post-lesson-bar">
+            <button class="btn-primary" id="returnHome">Start new session</button>
+          </div>
         </div>
       </div>
     </main>
