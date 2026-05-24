@@ -1,0 +1,1106 @@
+{
+  "learner": {
+    "programStartDate": "",
+    "currentWeek": 1,
+    "currentLesson": 1,
+    "defaultModality": "voice",
+    "tutorSpeechEnabled": true
+  },
+  "lessonState": {
+    "currentBooklet": "Paul Noble 1",
+    "currentSection": "Passé Composé with Avoir",
+    "currentPattern": "b1-passe-compose-avoir",
+    "nextTarget": "b1-passe-compose-avoir",
+    "freeProductionLevel": 0,
+    "lastCheckpoint": ""
+  },
+  "patterns": [
+    {
+      "id": "b1-cest-ce-nest-pas",
+      "booklet": "Paul Noble 1",
+      "section": "Core Building Blocks",
+      "pattern": "C'est / Ce n'est pas",
+      "examples": [
+        {
+          "english": "It's possible.",
+          "french": "C'est possible."
+        },
+        {
+          "english": "It's not possible.",
+          "french": "Ce n'est pas possible."
+        },
+        {
+          "english": "It's important.",
+          "french": "C'est important."
+        },
+        {
+          "english": "It's not important.",
+          "french": "Ce n'est pas important."
+        },
+        {
+          "english": "It's fantastic.",
+          "french": "C'est fantastique."
+        }
+      ],
+      "status": "mastered",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-passe-compose-avoir",
+      "booklet": "Paul Noble 1",
+      "section": "Passé Composé with Avoir",
+      "pattern": "J'ai + past participle (passé composé with avoir)",
+      "examples": [
+        {
+          "english": "I have booked.",
+          "french": "J'ai réservé."
+        },
+        {
+          "english": "I have prepared.",
+          "french": "J'ai préparé."
+        },
+        {
+          "english": "I have visited.",
+          "french": "J'ai visité."
+        },
+        {
+          "english": "I have eaten.",
+          "french": "J'ai mangé."
+        },
+        {
+          "english": "I have understood.",
+          "french": "J'ai compris."
+        }
+      ],
+      "status": "mastered",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-avoir-conjugations",
+      "booklet": "Paul Noble 1",
+      "section": "Passé Composé with Avoir",
+      "pattern": "Avoir conjugations: vous avez / nous avons / il a / elle a / tu as / ils ont / elles ont",
+      "examples": [
+        {
+          "english": "You have reserved.",
+          "french": "Vous avez réservé."
+        },
+        {
+          "english": "We have prepared.",
+          "french": "Nous avons préparé."
+        },
+        {
+          "english": "He has booked.",
+          "french": "Il a réservé."
+        },
+        {
+          "english": "She has eaten.",
+          "french": "Elle a mangé."
+        },
+        {
+          "english": "They have visited.",
+          "french": "Ils ont visité."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-questions-est-ce-que",
+      "booklet": "Paul Noble 1",
+      "section": "Questions",
+      "pattern": "Est-ce que questions",
+      "examples": [
+        {
+          "english": "Have you reserved?",
+          "french": "Est-ce que vous avez réservé ?"
+        },
+        {
+          "english": "Have you eaten?",
+          "french": "Est-ce que vous avez mangé ?"
+        },
+        {
+          "english": "Is it possible?",
+          "french": "Est-ce que c'est possible ?"
+        },
+        {
+          "english": "Do you want to come?",
+          "french": "Est-ce que vous voulez venir ?"
+        },
+        {
+          "english": "Did you understand?",
+          "french": "Est-ce que vous avez compris ?"
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-questions-inversion",
+      "booklet": "Paul Noble 1",
+      "section": "Questions",
+      "pattern": "Inversion questions (Avez-vous…?)",
+      "examples": [
+        {
+          "english": "Have you reserved?",
+          "french": "Avez-vous réservé ?"
+        },
+        {
+          "english": "Have you eaten?",
+          "french": "Avez-vous mangé ?"
+        },
+        {
+          "english": "Do you want to come?",
+          "french": "Voulez-vous venir ?"
+        },
+        {
+          "english": "Can you help me?",
+          "french": "Pouvez-vous m'aider ?"
+        },
+        {
+          "english": "Do you have a table?",
+          "french": "Avez-vous une table ?"
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-negatives-ne-pas",
+      "booklet": "Paul Noble 1",
+      "section": "Negatives",
+      "pattern": "Negatives with ne…pas",
+      "examples": [
+        {
+          "english": "I haven't reserved.",
+          "french": "Je n'ai pas réservé."
+        },
+        {
+          "english": "I don't want to go.",
+          "french": "Je ne veux pas aller."
+        },
+        {
+          "english": "It's not possible.",
+          "french": "Ce n'est pas possible."
+        },
+        {
+          "english": "I haven't eaten.",
+          "french": "Je n'ai pas mangé."
+        },
+        {
+          "english": "I can't come.",
+          "french": "Je ne peux pas venir."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-pronouns-le-la-les",
+      "booklet": "Paul Noble 1",
+      "section": "Object Pronouns",
+      "pattern": "Le/la/les as direct object pronouns",
+      "examples": [
+        {
+          "english": "I have prepared it (m).",
+          "french": "Je l'ai préparé."
+        },
+        {
+          "english": "I have prepared it (f).",
+          "french": "Je l'ai préparée."
+        },
+        {
+          "english": "I have booked it.",
+          "french": "Je l'ai réservé."
+        },
+        {
+          "english": "I haven't booked it.",
+          "french": "Je ne l'ai pas réservé."
+        },
+        {
+          "english": "I have seen them.",
+          "french": "Je les ai vus."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-pronoun-en",
+      "booklet": "Paul Noble 1",
+      "section": "Object Pronouns",
+      "pattern": "En (some/any): j'en ai, ils en ont trouvé",
+      "examples": [
+        {
+          "english": "I have some.",
+          "french": "J'en ai."
+        },
+        {
+          "english": "I don't have any.",
+          "french": "Je n'en ai pas."
+        },
+        {
+          "english": "Do you have any?",
+          "french": "Est-ce que vous en avez ?"
+        },
+        {
+          "english": "They found some.",
+          "french": "Ils en ont trouvé."
+        },
+        {
+          "english": "We ordered some.",
+          "french": "Nous en avons commandé."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-je-voudrais",
+      "booklet": "Paul Noble 1",
+      "section": "Polite Requests",
+      "pattern": "Je voudrais + infinitive",
+      "examples": [
+        {
+          "english": "I would like to reserve a table.",
+          "french": "Je voudrais réserver une table."
+        },
+        {
+          "english": "I would like to visit the museum.",
+          "french": "Je voudrais visiter le musée."
+        },
+        {
+          "english": "I would like to eat.",
+          "french": "Je voudrais manger."
+        },
+        {
+          "english": "I would like a room.",
+          "french": "Je voudrais une chambre."
+        },
+        {
+          "english": "I would like to speak to the manager.",
+          "french": "Je voudrais parler au directeur."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-vouloir",
+      "booklet": "Paul Noble 1",
+      "section": "Modal Verbs",
+      "pattern": "Vouloir: je veux / il veut / nous voulons / vous voulez / ils veulent",
+      "examples": [
+        {
+          "english": "I want to go.",
+          "french": "Je veux aller."
+        },
+        {
+          "english": "He wants to eat.",
+          "french": "Il veut manger."
+        },
+        {
+          "english": "We want to visit.",
+          "french": "Nous voulons visiter."
+        },
+        {
+          "english": "Do you want to come?",
+          "french": "Voulez-vous venir ?"
+        },
+        {
+          "english": "They want to reserve.",
+          "french": "Ils veulent réserver."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-pouvoir",
+      "booklet": "Paul Noble 1",
+      "section": "Modal Verbs",
+      "pattern": "Pouvoir: je peux / il peut / nous pouvons / vous pouvez / ils peuvent",
+      "examples": [
+        {
+          "english": "I can come.",
+          "french": "Je peux venir."
+        },
+        {
+          "english": "He can help.",
+          "french": "Il peut aider."
+        },
+        {
+          "english": "Can you help me?",
+          "french": "Pouvez-vous m'aider ?"
+        },
+        {
+          "english": "We can go.",
+          "french": "Nous pouvons aller."
+        },
+        {
+          "english": "They can't come.",
+          "french": "Ils ne peuvent pas venir."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-devoir",
+      "booklet": "Paul Noble 1",
+      "section": "Modal Verbs",
+      "pattern": "Devoir: je dois / il doit / nous devons / vous devez / ils doivent",
+      "examples": [
+        {
+          "english": "I must go.",
+          "french": "Je dois aller."
+        },
+        {
+          "english": "He must reserve.",
+          "french": "Il doit réserver."
+        },
+        {
+          "english": "We must pay.",
+          "french": "Nous devons payer."
+        },
+        {
+          "english": "You must arrive early.",
+          "french": "Vous devez arriver tôt."
+        },
+        {
+          "english": "They must leave.",
+          "french": "Ils doivent partir."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-y-aller",
+      "booklet": "Paul Noble 1",
+      "section": "Y as a Pronoun",
+      "pattern": "Y aller with modals: je veux y aller / je peux y aller / je dois y aller",
+      "examples": [
+        {
+          "english": "I want to go there.",
+          "french": "Je veux y aller."
+        },
+        {
+          "english": "I can go there.",
+          "french": "Je peux y aller."
+        },
+        {
+          "english": "I must go there.",
+          "french": "Je dois y aller."
+        },
+        {
+          "english": "We want to go there.",
+          "french": "Nous voulons y aller."
+        },
+        {
+          "english": "Do you want to go there?",
+          "french": "Voulez-vous y aller ?"
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-passe-compose-etre",
+      "booklet": "Paul Noble 1",
+      "section": "Passé Composé with Être",
+      "pattern": "Passé composé with être: aller, venir, partir, arriver, rester (+ agreement rule)",
+      "examples": [
+        {
+          "english": "I went.",
+          "french": "Je suis allé."
+        },
+        {
+          "english": "She went.",
+          "french": "Elle est allée."
+        },
+        {
+          "english": "He came.",
+          "french": "Il est venu."
+        },
+        {
+          "english": "They arrived (m).",
+          "french": "Ils sont arrivés."
+        },
+        {
+          "english": "She stayed.",
+          "french": "Elle est restée."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-present-tense-er",
+      "booklet": "Paul Noble 1",
+      "section": "Present Tense",
+      "pattern": "Present tense -er verbs: chop the r (je prépare, vous préparez, nous préparons)",
+      "examples": [
+        {
+          "english": "I prepare.",
+          "french": "Je prépare."
+        },
+        {
+          "english": "You prepare.",
+          "french": "Vous préparez."
+        },
+        {
+          "english": "We prepare.",
+          "french": "Nous préparons."
+        },
+        {
+          "english": "He reserves.",
+          "french": "Il réserve."
+        },
+        {
+          "english": "They eat.",
+          "french": "Ils mangent."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-present-tense-non-er",
+      "booklet": "Paul Noble 1",
+      "section": "Present Tense",
+      "pattern": "Present tense -ir/-re verbs: chop r + letters after (je finis, je vends)",
+      "examples": [
+        {
+          "english": "I finish.",
+          "french": "Je finis."
+        },
+        {
+          "english": "You finish.",
+          "french": "Vous finissez."
+        },
+        {
+          "english": "We finish.",
+          "french": "Nous finissons."
+        },
+        {
+          "english": "I sell.",
+          "french": "Je vends."
+        },
+        {
+          "english": "They sell.",
+          "french": "Ils vendent."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-future-aller",
+      "booklet": "Paul Noble 1",
+      "section": "Future Tense",
+      "pattern": "Near future with aller: je vais + infinitive",
+      "examples": [
+        {
+          "english": "I'm going to eat.",
+          "french": "Je vais manger."
+        },
+        {
+          "english": "I'm going to reserve.",
+          "french": "Je vais réserver."
+        },
+        {
+          "english": "He's going to arrive.",
+          "french": "Il va arriver."
+        },
+        {
+          "english": "We're going to visit.",
+          "french": "Nous allons visiter."
+        },
+        {
+          "english": "They're going to leave.",
+          "french": "Ils vont partir."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-future-will",
+      "booklet": "Paul Noble 1",
+      "section": "Future Tense",
+      "pattern": "Simple future with -rai/-ra/-rez/-rons/-ront",
+      "examples": [
+        {
+          "english": "I will eat.",
+          "french": "Je mangerai."
+        },
+        {
+          "english": "He will arrive.",
+          "french": "Il arrivera."
+        },
+        {
+          "english": "You will reserve.",
+          "french": "Vous réserverez."
+        },
+        {
+          "english": "We will visit.",
+          "french": "Nous visiterons."
+        },
+        {
+          "english": "They will come.",
+          "french": "Ils viendront."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-travel-hotel",
+      "booklet": "Paul Noble 1",
+      "section": "Travel Scenarios",
+      "pattern": "Hotel: reservations, rooms, check-in, requests",
+      "examples": [
+        {
+          "english": "I would like to reserve a room.",
+          "french": "Je voudrais réserver une chambre."
+        },
+        {
+          "english": "Do you have a room available?",
+          "french": "Avez-vous une chambre disponible ?"
+        },
+        {
+          "english": "I have a reservation.",
+          "french": "J'ai une réservation."
+        },
+        {
+          "english": "Where is the lift?",
+          "french": "Où est l'ascenseur ?"
+        },
+        {
+          "english": "Can you bring me the key?",
+          "french": "Pouvez-vous m'apporter la clé ?"
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-travel-restaurant",
+      "booklet": "Paul Noble 1",
+      "section": "Travel Scenarios",
+      "pattern": "Restaurant: ordering, asking for things, paying",
+      "examples": [
+        {
+          "english": "I would like to reserve a table for two.",
+          "french": "Je voudrais réserver une table pour deux personnes."
+        },
+        {
+          "english": "The bill, please.",
+          "french": "L'addition, s'il vous plaît."
+        },
+        {
+          "english": "I would like the menu.",
+          "french": "Je voudrais la carte."
+        },
+        {
+          "english": "I am allergic to nuts.",
+          "french": "Je suis allergique aux noix."
+        },
+        {
+          "english": "It was delicious.",
+          "french": "C'était délicieux."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-travel-directions",
+      "booklet": "Paul Noble 1",
+      "section": "Travel Scenarios",
+      "pattern": "Directions: asking and understanding directions",
+      "examples": [
+        {
+          "english": "Where is the train station?",
+          "french": "Où est la gare ?"
+        },
+        {
+          "english": "Is it far?",
+          "french": "C'est loin ?"
+        },
+        {
+          "english": "Turn left.",
+          "french": "Tournez à gauche."
+        },
+        {
+          "english": "Turn right.",
+          "french": "Tournez à droite."
+        },
+        {
+          "english": "Straight ahead.",
+          "french": "Tout droit."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-travel-train",
+      "booklet": "Paul Noble 1",
+      "section": "Travel Scenarios",
+      "pattern": "Train travel: tickets, platforms, schedules",
+      "examples": [
+        {
+          "english": "A ticket to Paris, please.",
+          "french": "Un billet pour Paris, s'il vous plaît."
+        },
+        {
+          "english": "Which platform?",
+          "french": "Quel quai ?"
+        },
+        {
+          "english": "What time does the train leave?",
+          "french": "À quelle heure part le train ?"
+        },
+        {
+          "english": "I would like a return ticket.",
+          "french": "Je voudrais un billet aller-retour."
+        },
+        {
+          "english": "Is the train on time?",
+          "french": "Le train est à l'heure ?"
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-travel-doctor",
+      "booklet": "Paul Noble 1",
+      "section": "Travel Scenarios",
+      "pattern": "Doctor and pharmacy: symptoms, requests",
+      "examples": [
+        {
+          "english": "I need a doctor.",
+          "french": "J'ai besoin d'un médecin."
+        },
+        {
+          "english": "I have a headache.",
+          "french": "J'ai mal à la tête."
+        },
+        {
+          "english": "I have a stomach ache.",
+          "french": "J'ai mal au ventre."
+        },
+        {
+          "english": "Do you have something for a headache?",
+          "french": "Avez-vous quelque chose contre les maux de tête ?"
+        },
+        {
+          "english": "I am not feeling well.",
+          "french": "Je ne me sens pas bien."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b1-numbers",
+      "booklet": "Paul Noble 1",
+      "section": "Numbers and Practical Language",
+      "pattern": "Numbers 1–100 and practical uses",
+      "examples": [
+        {
+          "english": "twenty",
+          "french": "vingt"
+        },
+        {
+          "english": "thirty-five",
+          "french": "trente-cinq"
+        },
+        {
+          "english": "seventy",
+          "french": "soixante-dix"
+        },
+        {
+          "english": "eighty",
+          "french": "quatre-vingts"
+        },
+        {
+          "english": "ninety-nine",
+          "french": "quatre-vingt-dix-neuf"
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-intention-de",
+      "booklet": "Paul Noble Next Steps",
+      "section": "J'ai + noun + de constructions",
+      "pattern": "J'ai l'intention de + infinitive (I intend to)",
+      "examples": [
+        {
+          "english": "I intend to visit Paris.",
+          "french": "J'ai l'intention de visiter Paris."
+        },
+        {
+          "english": "I intend to reserve a table.",
+          "french": "J'ai l'intention de réserver une table."
+        },
+        {
+          "english": "I intend to learn French.",
+          "french": "J'ai l'intention d'apprendre le français."
+        },
+        {
+          "english": "I intend to go tomorrow.",
+          "french": "J'ai l'intention d'y aller demain."
+        },
+        {
+          "english": "I intend to speak to him.",
+          "french": "J'ai l'intention de lui parler."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-envie-de",
+      "booklet": "Paul Noble Next Steps",
+      "section": "J'ai + noun + de constructions",
+      "pattern": "J'ai envie de + infinitive (I feel like / I want to)",
+      "examples": [
+        {
+          "english": "I feel like eating.",
+          "french": "J'ai envie de manger."
+        },
+        {
+          "english": "I feel like going to the cinema.",
+          "french": "J'ai envie d'aller au cinéma."
+        },
+        {
+          "english": "I feel like sleeping.",
+          "french": "J'ai envie de dormir."
+        },
+        {
+          "english": "I really feel like a coffee.",
+          "french": "J'ai vraiment envie d'un café."
+        },
+        {
+          "english": "I don't feel like going out.",
+          "french": "Je n'ai pas envie de sortir."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-peur-de",
+      "booklet": "Paul Noble Next Steps",
+      "section": "J'ai + noun + de constructions",
+      "pattern": "J'ai peur de + infinitive (I'm afraid of)",
+      "examples": [
+        {
+          "english": "I'm afraid of flying.",
+          "french": "J'ai peur de prendre l'avion."
+        },
+        {
+          "english": "I'm afraid of being late.",
+          "french": "J'ai peur d'être en retard."
+        },
+        {
+          "english": "I'm afraid of making a mistake.",
+          "french": "J'ai peur de faire une erreur."
+        },
+        {
+          "english": "He's afraid of failing.",
+          "french": "Il a peur d'échouer."
+        },
+        {
+          "english": "I'm not afraid of speaking French.",
+          "french": "Je n'ai pas peur de parler français."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-horreur-de",
+      "booklet": "Paul Noble Next Steps",
+      "section": "J'ai + noun + de constructions",
+      "pattern": "J'ai horreur de + infinitive (I can't stand / I hate)",
+      "examples": [
+        {
+          "english": "I can't stand waiting.",
+          "french": "J'ai horreur d'attendre."
+        },
+        {
+          "english": "I hate flying.",
+          "french": "J'ai horreur de prendre l'avion."
+        },
+        {
+          "english": "I can't stand being late.",
+          "french": "J'ai horreur d'être en retard."
+        },
+        {
+          "english": "She can't stand cooking.",
+          "french": "Elle a horreur de cuisiner."
+        },
+        {
+          "english": "I hate getting up early.",
+          "french": "J'ai horreur de me lever tôt."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-besoin-de",
+      "booklet": "Paul Noble Next Steps",
+      "section": "J'ai + noun + de constructions",
+      "pattern": "J'ai besoin de + infinitive/noun (I need to / I need)",
+      "examples": [
+        {
+          "english": "I need to rest.",
+          "french": "J'ai besoin de me reposer."
+        },
+        {
+          "english": "I need a doctor.",
+          "french": "J'ai besoin d'un médecin."
+        },
+        {
+          "english": "I need to think.",
+          "french": "J'ai besoin de réfléchir."
+        },
+        {
+          "english": "I need to speak to you.",
+          "french": "J'ai besoin de vous parler."
+        },
+        {
+          "english": "He needs time.",
+          "french": "Il a besoin de temps."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-etais-sur-le-point-de",
+      "booklet": "Paul Noble Next Steps",
+      "section": "Ongoing and Imminent Past",
+      "pattern": "J'étais sur le point de + infinitive (I was about to)",
+      "examples": [
+        {
+          "english": "I was about to call you.",
+          "french": "J'étais sur le point de vous appeler."
+        },
+        {
+          "english": "I was about to leave.",
+          "french": "J'étais sur le point de partir."
+        },
+        {
+          "english": "She was about to eat.",
+          "french": "Elle était sur le point de manger."
+        },
+        {
+          "english": "We were about to order.",
+          "french": "Nous étions sur le point de commander."
+        },
+        {
+          "english": "He was about to pay.",
+          "french": "Il était sur le point de payer."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-etais-en-train-de",
+      "booklet": "Paul Noble Next Steps",
+      "section": "Ongoing and Imminent Past",
+      "pattern": "J'étais en train de + infinitive (I was in the middle of / I was doing)",
+      "examples": [
+        {
+          "english": "I was in the middle of eating.",
+          "french": "J'étais en train de manger."
+        },
+        {
+          "english": "I was watching television.",
+          "french": "J'étais en train de regarder la télévision."
+        },
+        {
+          "english": "She was cooking.",
+          "french": "Elle était en train de cuisiner."
+        },
+        {
+          "english": "We were working.",
+          "french": "Nous étions en train de travailler."
+        },
+        {
+          "english": "He was reading when I arrived.",
+          "french": "Il était en train de lire quand je suis arrivé."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-a-cause-de-grace-a",
+      "booklet": "Paul Noble Next Steps",
+      "section": "Connectors",
+      "pattern": "À cause de (because of) / grâce à (thanks to)",
+      "examples": [
+        {
+          "english": "Because of the traffic, I was late.",
+          "french": "À cause de la circulation, j'étais en retard."
+        },
+        {
+          "english": "Because of you, it's ruined.",
+          "french": "À cause de vous, c'est raté."
+        },
+        {
+          "english": "Thanks to you, I passed.",
+          "french": "Grâce à vous, j'ai réussi."
+        },
+        {
+          "english": "Thanks to this app, I speak French.",
+          "french": "Grâce à cette application, je parle français."
+        },
+        {
+          "english": "Because of the rain, we didn't go out.",
+          "french": "À cause de la pluie, nous ne sommes pas sortis."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-imparfait-vs-passe-compose",
+      "booklet": "Paul Noble Next Steps",
+      "section": "Imparfait vs Passé Composé",
+      "pattern": "Imparfait (repeated/ongoing past) vs passé composé (completed event)",
+      "examples": [
+        {
+          "english": "I used to eat there every day. (habit)",
+          "french": "Je mangeais là tous les jours."
+        },
+        {
+          "english": "I ate there yesterday. (completed)",
+          "french": "J'ai mangé là hier."
+        },
+        {
+          "english": "I was watching TV when he called.",
+          "french": "Je regardais la télévision quand il a appelé."
+        },
+        {
+          "english": "As a child, I played in the garden.",
+          "french": "Quand j'étais enfant, je jouais dans le jardin."
+        },
+        {
+          "english": "It was raining when I arrived.",
+          "french": "Il pleuvait quand je suis arrivé."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-imparfait-forms",
+      "booklet": "Paul Noble Next Steps",
+      "section": "Imparfait Forms",
+      "pattern": "Imparfait conjugation: je mangeais / je regardais / je buvais / il regardait / nous achetions",
+      "examples": [
+        {
+          "english": "I was eating.",
+          "french": "Je mangeais."
+        },
+        {
+          "english": "I was watching.",
+          "french": "Je regardais."
+        },
+        {
+          "english": "I was drinking.",
+          "french": "Je buvais."
+        },
+        {
+          "english": "He was watching.",
+          "french": "Il regardait."
+        },
+        {
+          "english": "We were buying.",
+          "french": "Nous achetions."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
+      "id": "b2-time-markers",
+      "booklet": "Paul Noble Next Steps",
+      "section": "Imparfait Forms",
+      "pattern": "Time markers for habitual past: toujours / tous les jours / tous les matins / tous les soirs / tous les ans",
+      "examples": [
+        {
+          "english": "I always ate there.",
+          "french": "Je mangeais toujours là."
+        },
+        {
+          "english": "Every day, I walked to work.",
+          "french": "Tous les jours, j'allais au travail à pied."
+        },
+        {
+          "english": "Every morning, I drank coffee.",
+          "french": "Tous les matins, je buvais un café."
+        },
+        {
+          "english": "Every evening, they watched television.",
+          "french": "Tous les soirs, ils regardaient la télévision."
+        },
+        {
+          "english": "Every year, we went to the south.",
+          "french": "Tous les ans, nous allions dans le sud."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    }
+  ],
+  "recurringErrors": [],
+  "sessionLog": []
+}
