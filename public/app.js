@@ -248,8 +248,36 @@ function renderWelcome() {
   if (!appState) return;
   const { learner, lessonState, patterns } = appState;
   document.getElementById('welcomeSessionNum').textContent = learner.currentLesson;
-  const current = patterns.find(p => p.id === lessonState.currentPattern);
-  document.getElementById('welcomePatternName').textContent = current ? current.pattern : '—';
+
+  let recommended = null;
+  let label = 'up next';
+
+  const fragile = patterns.filter(p => p.status === 'fragile');
+  if (fragile.length) { recommended = fragile[0]; label = 'needs a revisit'; }
+
+  if (!recommended) {
+    const current = patterns.find(p => p.id === lessonState.currentPattern);
+    if (current) { recommended = current; label = 'up next'; }
+  }
+
+  if (!recommended) {
+    const stabilizing = patterns.filter(p => p.status === 'stabilizing');
+    if (stabilizing.length) { recommended = stabilizing[0]; label = 'keep building'; }
+  }
+
+  if (!recommended) {
+    const fresh = patterns.filter(p => p.status === 'exposure only');
+    if (fresh.length) { recommended = fresh[0]; label = 'ready to try'; }
+  }
+
+  document.getElementById('welcomeRecommendLabel').textContent = label;
+  document.getElementById('welcomePatternName').textContent = recommended ? recommended.pattern : '—';
+
+  if (recommended && recommended.id !== lessonState.currentPattern) {
+    appState.lessonState.currentPattern = recommended.id;
+    appState.lessonState.currentSection = recommended.section;
+    appState.lessonState.currentBooklet = recommended.booklet;
+  }
 }
 
 document.getElementById('welcomeChoose').addEventListener('click', () => {
@@ -376,6 +404,24 @@ function formatTutorMessage(text) {
   return html || '<p>' + text + '</p>';
 }
 
+function renderCoachNote(text) {
+  const inner = makeChatInner();
+  const wrap = document.createElement('div');
+  wrap.className = 'message message--coach';
+  const note = document.createElement('div');
+  note.className = 'coach-note';
+  const header = document.createElement('div');
+  header.className = 'coach-note-header';
+  header.textContent = "Coach's note";
+  const body = document.createElement('p');
+  body.textContent = text;
+  note.appendChild(header);
+  note.appendChild(body);
+  wrap.appendChild(note);
+  inner.appendChild(wrap);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
 function showTyping() {
   const inner = makeChatInner();
   const indicator = document.createElement('div');
@@ -482,7 +528,11 @@ async function endLesson() {
     await saveState();
     renderSidebar();
     renderWelcome();
-    renderMessage('tutor', data.reply, true);
+
+    const coachNote = data.reply
+      .replace(/:::CHECKPOINT:::[\s\S]*?:::CHECKPOINT:::/g, '')
+      .trim();
+    if (coachNote) renderCoachNote(coachNote);
   } catch (e) {
     hideTyping();
     renderMessage('tutor', 'There was an error saving your lesson. Please try again.');

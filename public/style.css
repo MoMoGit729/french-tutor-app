@@ -290,6 +290,15 @@ body {
   font-size: 12px;
   font-weight: 400;
   color: var(--charcoal-light);
+  margin-bottom: 4px;
+}
+.welcome-recommend-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fr-blue);
+  opacity: 0.75;
   margin-bottom: 6px;
 }
 .welcome-pattern-name {
@@ -433,6 +442,30 @@ body {
   100% { background: var(--gray-light); }
 }
 .message-bubble.flash-correct { animation: correctFlash 1s ease-out forwards; }
+
+/* Coach note card */
+.message--coach { align-items: flex-start; }
+.coach-note {
+  max-width: 92%;
+  background: #eef1fb;
+  border-left: 3px solid var(--fr-blue);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+.coach-note-header {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fr-blue);
+  margin-bottom: 10px;
+}
+.coach-note p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--charcoal-mid);
+  margin: 0;
+}
 
 /* ── Input area ──────────────────────────────────────────────────────────── */
 .input-area {

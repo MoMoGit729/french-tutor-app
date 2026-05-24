@@ -12,7 +12,7 @@ module.exports = async function handler(req, res) {
       ...messages,
       {
         role: 'user',
-        content: 'The lesson is ending now. Please output the structured CHECKPOINT block as specified, then give a brief human-readable summary of what we covered and what to work on next.'
+        content: "The lesson is ending now. Output the CHECKPOINT block first, then your coach's note — exactly as specified in your instructions."
       }
     ];
     const response = await client.messages.create({
