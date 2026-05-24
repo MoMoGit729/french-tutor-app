@@ -188,7 +188,7 @@ function renderSidebar() {
 
   const groups = [
     { key: 'Paul Noble 1', label: 'Paul Noble Intro PDF (PN1)', prefix: 'PN1' },
-    { key: 'Paul Noble 2', label: 'Paul Noble Next Steps PDF (PN2)', prefix: 'PN2' },
+    { key: 'Paul Noble Next Steps', label: 'Paul Noble Next Steps PDF (PN2)', prefix: 'PN2' },
   ];
 
   patternList.innerHTML = '';
