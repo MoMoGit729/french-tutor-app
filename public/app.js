@@ -427,6 +427,21 @@ function hideTyping() {
 /* ── Lesson flow ─────────────────────────────────────────────────────────── */
 startBtn.addEventListener('click', startLesson);
 
+function showToast(message) {
+  const existing = document.getElementById('toastMsg');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.id = 'toastMsg';
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add('toast--visible'));
+  setTimeout(() => {
+    toast.classList.remove('toast--visible');
+    setTimeout(() => toast.remove(), 400);
+  }, 2500);
+}
+
 function goHome() {
   lessonActive = false;
   conversationMessages = [];
@@ -501,6 +516,16 @@ async function sendToTutor(messages) {
 
 async function saveAndExit() {
   if (!lessonActive) return;
+
+  const realResponses = conversationMessages.filter(
+    m => m.role === 'user' && m.content !== 'Start the lesson. Give me the brief orientation, then the first prompt.'
+  );
+  if (realResponses.length < 3) {
+    showToast('Short session — picking up here next time.');
+    goHome();
+    return;
+  }
+
   lessonActive = false;
   sendBtn.disabled = true;
   showTyping();

@@ -735,6 +735,28 @@ body {
 .sidebar-section:last-child::-webkit-scrollbar { width: 3px; }
 .sidebar-section:last-child::-webkit-scrollbar-thumb { background: var(--gray-dark); }
 
+/* ── Toast ───────────────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--charcoal);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 99px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 9999;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 700px) {
   .sidebar {
