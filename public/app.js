@@ -45,12 +45,17 @@ async function loadState() {
 }
 
 async function saveState() {
-  const res = await fetch('/api/state', {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(appState)
-  });
-  if (!res.ok) showToast('Could not save — check your connection.');
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const res = await fetch('/api/state', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(appState)
+      });
+      if (res.ok) return;
+    } catch (_) {}
+    if (attempt === 2) showToast('Could not save — check your connection.');
+  }
 }
 
 function applyCheckpoint(checkpoint) {

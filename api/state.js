@@ -8,8 +8,10 @@ module.exports = async function handler(req, res) {
       return res.json(state);
     }
     if (req.method === 'PUT') {
-      if (!req.body) return res.status(400).json({ error: 'No body' });
-      await setState(req.body);
+      let body = req.body;
+      if (!body) return res.status(400).json({ error: 'No body' });
+      if (typeof body === 'string') body = JSON.parse(body);
+      await setState(body);
       return res.json({ ok: true });
     }
     res.status(405).end();
