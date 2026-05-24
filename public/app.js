@@ -208,9 +208,8 @@ function shortPatternLabel(id) {
 
 function dotClass(status) {
   if (status === 'mastered') return 'mastered';
-  if (status === 'stabilizing') return 'stabilizing';
-  if (status === 'fragile') return 'fragile';
-  return 'exposure';
+  if (status === 'stabilizing' || status === 'fragile' || status === 'learning') return 'learning';
+  return 'new';
 }
 
 toggleSidebar.addEventListener('click', () => sidebar.classList.toggle('hidden'));
