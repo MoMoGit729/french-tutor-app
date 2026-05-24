@@ -252,13 +252,20 @@ body {
   padding: 40px 0;
   scroll-behavior: smooth;
   background: var(--main-bg);
+  display: flex;
+  flex-direction: column;
 }
 .chat-area::-webkit-scrollbar { width: 4px; }
 .chat-area::-webkit-scrollbar-track { background: transparent; }
 .chat-area::-webkit-scrollbar-thumb { background: var(--gray-mid); border-radius: 2px; }
 
 .chat-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   max-width: 680px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 28px;
   display: flex;
