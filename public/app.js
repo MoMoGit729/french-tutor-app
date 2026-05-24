@@ -54,14 +54,12 @@ async function saveState() {
 function applyCheckpoint(checkpoint) {
   const now = new Date().toISOString();
 
+  // Pattern statuses are user-controlled — Claudette suggests via the coach's note, never overrides
+  // Still record lastPracticed so the sidebar knows when each pattern was last worked on
   if (checkpoint.patternsUpdate) {
     for (const update of checkpoint.patternsUpdate) {
       const pattern = appState.patterns.find(p => p.id === update.id);
-      if (pattern) {
-        pattern.status = update.newStatus;
-        pattern.lastPracticed = now;
-        if (update.notes) pattern.notes = update.notes;
-      }
+      if (pattern) pattern.lastPracticed = now;
     }
   }
 
