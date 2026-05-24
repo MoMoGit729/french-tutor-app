@@ -182,20 +182,33 @@ function renderSidebar() {
   document.getElementById('metaLesson').textContent = learner.currentLesson;
   document.getElementById('metaBooklet').textContent = lessonState.currentBooklet || '—';
   document.getElementById('metaFocus').textContent = shortPatternLabel(lessonState.currentPattern);
-  document.getElementById('metaNext').textContent = shortPatternLabel(lessonState.nextTarget);
+
+  const groups = [
+    { key: 'Paul Noble 1', label: 'Paul Noble Intro PDF (PN1)' },
+    { key: 'Paul Noble 2', label: 'Paul Noble Next Steps PDF (PN2)' },
+  ];
 
   patternList.innerHTML = '';
-  for (const p of patterns) {
-    const item = document.createElement('div');
-    item.className = 'pattern-item';
-    item.dataset.id = p.id;
-    item.innerHTML = `
-      <span class="dot dot--${dotClass(p.status)}"></span>
-      <span class="pattern-name">${p.pattern}</span>
-      <span class="pattern-booklet">${p.booklet === 'Paul Noble 1' ? 'B1' : 'B2'}</span>
-    `;
-    item.addEventListener('click', () => openPatternModal(p.id));
-    patternList.appendChild(item);
+  for (const group of groups) {
+    const groupPatterns = patterns.filter(p => p.booklet === group.key);
+    if (!groupPatterns.length) continue;
+
+    const heading = document.createElement('div');
+    heading.className = 'pattern-group-heading';
+    heading.textContent = group.label;
+    patternList.appendChild(heading);
+
+    for (const p of groupPatterns) {
+      const item = document.createElement('div');
+      item.className = 'pattern-item';
+      item.dataset.id = p.id;
+      item.innerHTML = `
+        <span class="dot dot--${dotClass(p.status)}"></span>
+        <span class="pattern-name">${p.pattern}</span>
+      `;
+      item.addEventListener('click', () => openPatternModal(p.id));
+      patternList.appendChild(item);
+    }
   }
 }
 
