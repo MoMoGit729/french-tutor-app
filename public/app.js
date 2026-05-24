@@ -26,6 +26,7 @@ const sidebarClose   = document.getElementById('sidebarClose');
 const sidebar        = document.getElementById('sidebar');
 const toggleSpeech   = document.getElementById('toggleSpeech');
 const patternList    = document.getElementById('patternList');
+if (window.innerWidth <= 700) sidebar.classList.add('hidden');
 const modalOverlay   = document.getElementById('modalOverlay');
 const modalClose     = document.getElementById('modalClose');
 const modalCancel    = document.getElementById('modalCancel');
@@ -38,17 +39,18 @@ const statusOptions  = document.querySelectorAll('.status-opt');
 
 /* ── State management ────────────────────────────────────────────────────── */
 async function loadState() {
-  const res = await fetch('/api/state');
+  const res = await fetch('/api/state', { cache: 'no-store' });
   appState = await res.json();
   speechEnabled = appState.learner.tutorSpeechEnabled;
 }
 
 async function saveState() {
-  await fetch('/api/state', {
+  const res = await fetch('/api/state', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(appState)
   });
+  if (!res.ok) showToast('Could not save — check your connection.');
 }
 
 function applyCheckpoint(checkpoint) {
