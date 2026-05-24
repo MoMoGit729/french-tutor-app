@@ -162,6 +162,15 @@ body {
 }
 .pattern-item:hover { background: rgba(0,0,0,0.06); }
 .pattern-item .dot { flex-shrink: 0; }
+.pattern-code {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--fr-blue);
+  opacity: 0.55;
+  flex-shrink: 0;
+  min-width: 36px;
+}
 .pattern-name {
   font-size: 12px;
   font-weight: 400;

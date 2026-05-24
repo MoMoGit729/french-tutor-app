@@ -187,8 +187,8 @@ function renderSidebar() {
   document.getElementById('metaFocus').textContent = shortPatternLabel(lessonState.currentPattern);
 
   const groups = [
-    { key: 'Paul Noble 1', label: 'Paul Noble Intro PDF (PN1)' },
-    { key: 'Paul Noble 2', label: 'Paul Noble Next Steps PDF (PN2)' },
+    { key: 'Paul Noble 1', label: 'Paul Noble Intro PDF (PN1)', prefix: 'PN1' },
+    { key: 'Paul Noble 2', label: 'Paul Noble Next Steps PDF (PN2)', prefix: 'PN2' },
   ];
 
   patternList.innerHTML = '';
@@ -201,17 +201,19 @@ function renderSidebar() {
     heading.textContent = group.label;
     patternList.appendChild(heading);
 
-    for (const p of groupPatterns) {
+    groupPatterns.forEach((p, i) => {
+      const code = `${group.prefix}-${String(i + 1).padStart(2, '0')}`;
       const item = document.createElement('div');
       item.className = 'pattern-item';
       item.dataset.id = p.id;
       item.innerHTML = `
         <span class="dot dot--${dotClass(p.status)}"></span>
+        <span class="pattern-code">${code}</span>
         <span class="pattern-name">${p.pattern}</span>
       `;
       item.addEventListener('click', () => openPatternModal(p.id));
       patternList.appendChild(item);
-    }
+    });
   }
 }
 
@@ -552,7 +554,7 @@ function exitLesson() {
 saveExitBtn.addEventListener('click', saveAndExit);
 exitBtn.addEventListener('click', exitLesson);
 returnHomeBtn.addEventListener('click', goHome);
-appTitle.addEventListener('click', () => { if (lessonActive) exitLesson(); });
+appTitle.addEventListener('click', goHome);
 
 /* ── Input controls ──────────────────────────────────────────────────────── */
 sendBtn.addEventListener('click', sendMessage);

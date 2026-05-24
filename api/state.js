@@ -8,10 +8,8 @@ module.exports = async function handler(req, res) {
       return res.json(state);
     }
     if (req.method === 'PUT') {
-      const incoming = req.body;
-      const current = await getState();
-      const updated = deepMerge(current, incoming);
-      await setState(updated);
+      if (!req.body) return res.status(400).json({ error: 'No body' });
+      await setState(req.body);
       return res.json({ ok: true });
     }
     res.status(405).end();
@@ -20,15 +18,3 @@ module.exports = async function handler(req, res) {
     res.status(500).json({ error: e.message });
   }
 };
-
-function deepMerge(target, source) {
-  const result = { ...target };
-  for (const key of Object.keys(source)) {
-    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
-      result[key] = deepMerge(target[key] || {}, source[key]);
-    } else {
-      result[key] = source[key];
-    }
-  }
-  return result;
-}
