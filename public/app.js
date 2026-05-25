@@ -7,6 +7,8 @@ let frenchVoice = null;
 let recognition = null;
 let isRecording = false;
 let editingPatternId = null;
+let exchangeCount = 0;
+let typingNudgeSent = false;
 
 /* ── Elements ────────────────────────────────────────────────────────────── */
 const chatArea       = document.getElementById('chatArea');
@@ -53,8 +55,18 @@ async function saveState() {
         body: JSON.stringify(appState)
       });
       if (res.ok) return;
-    } catch (_) {}
-    if (attempt === 2) showToast('Could not save — check your connection.');
+      if (attempt === 2) {
+        let msg = 'Could not save — check your connection.';
+        try {
+          const err = await res.json();
+          if (err.error) msg = 'Save failed: ' + err.error;
+        } catch (_) {}
+        showToast(msg);
+        return;
+      }
+    } catch (_) {
+      if (attempt === 2) showToast('Could not save — no network connection.');
+    }
   }
 }
 
@@ -463,6 +475,8 @@ function goHome() {
 
 async function startLesson() {
   lessonActive = true;
+  exchangeCount = 0;
+  typingNudgeSent = false;
   welcomeScreen.style.display = 'none';
   inputArea.style.display = '';
 
@@ -491,12 +505,16 @@ async function sendMessage() {
   sendBtn.disabled = true;
   micStatus.textContent = '';
 
+  exchangeCount += 1;
   conversationMessages.push({ role: 'user', content: text });
   showTyping();
 
+  const deliverNudge = exchangeCount >= 10 && !typingNudgeSent;
+
   try {
-    const reply = await sendToTutor(conversationMessages);
+    const reply = await sendToTutor(conversationMessages, deliverNudge);
     hideTyping();
+    if (deliverNudge) typingNudgeSent = true;
     conversationMessages.push({ role: 'assistant', content: reply });
     renderMessage('tutor', reply, true);
   } catch (e) {
@@ -508,11 +526,12 @@ async function sendMessage() {
   userInput.focus();
 }
 
-async function sendToTutor(messages) {
+async function sendToTutor(messages, typingNudge = false) {
+  const stateForApi = typingNudge ? { ...appState, _typingNudge: true } : appState;
   const res = await fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messages, state: appState })
+    body: JSON.stringify({ messages, state: stateForApi })
   });
   if (!res.ok) throw new Error(await res.text());
   const data = await res.json();
