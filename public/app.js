@@ -597,7 +597,43 @@ async function saveAndExit() {
 
 function exitLesson() {
   if (!lessonActive) return;
-  goHome();
+  const realResponses = conversationMessages.filter(
+    m => m.role === 'user' && m.content !== 'Start the lesson. Give me the brief orientation, then the first prompt.'
+  );
+  if (realResponses.length === 0) {
+    goHome();
+    return;
+  }
+  showExitConfirm();
+}
+
+function showExitConfirm() {
+  const existing = document.getElementById('exitConfirm');
+  if (existing) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'exitConfirm';
+  overlay.className = 'modal-overlay';
+  overlay.style.display = 'flex';
+  overlay.innerHTML = `
+    <div class="modal">
+      <div class="modal-body" style="padding-top:1.5rem">
+        <p style="margin:0 0 0.5rem;font-family:inherit;font-size:1rem;">Exit without saving?</p>
+        <p style="margin:0;font-size:0.875rem;opacity:0.65;">Your progress from this session won't be recorded.</p>
+      </div>
+      <div class="modal-footer">
+        <div class="modal-footer-right">
+          <button class="btn-secondary" id="exitConfirmCancel">Keep going</button>
+          <button class="btn-primary" id="exitConfirmOk">Exit</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  document.getElementById('exitConfirmCancel').addEventListener('click', () => overlay.remove());
+  document.getElementById('exitConfirmOk').addEventListener('click', () => { overlay.remove(); goHome(); });
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
 }
 
 saveExitBtn.addEventListener('click', saveAndExit);
