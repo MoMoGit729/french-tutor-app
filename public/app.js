@@ -111,6 +111,7 @@ function applyCheckpoint(checkpoint) {
     appState.lessonState.freeProductionLevel = checkpoint.freeProductionLevel;
   }
 
+  const sessionVerbs = Array.isArray(checkpoint.verbsUsed) ? checkpoint.verbsUsed : [];
   appState.sessionLog.push({
     lessonNumber: appState.learner.currentLesson,
     date: now,
@@ -123,10 +124,15 @@ function applyCheckpoint(checkpoint) {
       ? checkpoint.patternsUpdate.filter(u => u.newStatus === 'fragile').map(u => u.id)
       : [],
     checkpoint: checkpoint.sessionSummary || '',
-    verbsUsed: Array.isArray(checkpoint.verbsUsed) ? checkpoint.verbsUsed : [],
+    verbsUsed: sessionVerbs,
     coachNote: '',
     notes: ''
   });
+
+  if (!Array.isArray(appState.verbsDrilled)) appState.verbsDrilled = [];
+  for (const verb of sessionVerbs) {
+    if (!appState.verbsDrilled.includes(verb)) appState.verbsDrilled.push(verb);
+  }
 
   appState.learner.currentLesson += 1;
   appState.lessonState.lastCheckpoint = now;
