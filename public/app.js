@@ -9,6 +9,9 @@ let isRecording = false;
 let editingPatternId = null;
 let exchangeCount = 0;
 let typingNudgeSent = false;
+let postLessonExchanges = 0;
+let lastCheckpointParsed = null;
+let lastCoachNote = '';
 
 /* ── Elements ────────────────────────────────────────────────────────────── */
 const chatArea       = document.getElementById('chatArea');
@@ -38,6 +41,10 @@ const modalPatternName = document.getElementById('modalPatternName');
 const patternNotes   = document.getElementById('patternNotes');
 const modalExamples  = document.getElementById('modalExamples');
 const statusOptions  = document.querySelectorAll('.status-opt');
+const askCoachBtn      = document.getElementById('askCoachBtn');
+const coachFollowUpArea = document.getElementById('coachFollowUpArea');
+const coachInput       = document.getElementById('coachInput');
+const coachSendBtn     = document.getElementById('coachSendBtn');
 
 /* ── State management ────────────────────────────────────────────────────── */
 async function loadState() {
@@ -116,6 +123,8 @@ function applyCheckpoint(checkpoint) {
       ? checkpoint.patternsUpdate.filter(u => u.newStatus === 'fragile').map(u => u.id)
       : [],
     checkpoint: checkpoint.sessionSummary || '',
+    verbsUsed: Array.isArray(checkpoint.verbsUsed) ? checkpoint.verbsUsed : [],
+    coachNote: '',
     notes: ''
   });
 
@@ -234,11 +243,24 @@ function renderSidebar() {
   }
 }
 
+function patternCode(id) {
+  if (!id || !appState) return '';
+  const bookletMap = { 'b1': 'PN1', 'b2': 'PN2' };
+  const prefix = id.split('-')[0];
+  const pnPrefix = bookletMap[prefix];
+  if (!pnPrefix) return '';
+  const sameBooklet = appState.patterns.filter(x => x.id.startsWith(prefix + '-'));
+  const idx = sameBooklet.findIndex(x => x.id === id);
+  if (idx === -1) return '';
+  return `${pnPrefix}-${String(idx + 1).padStart(2, '0')}`;
+}
+
 function shortPatternLabel(id) {
   if (!id || !appState) return '—';
   const p = appState.patterns.find(x => x.id === id);
   if (!p) return id;
-  return p.pattern.length > 35 ? p.pattern.slice(0, 33) + '…' : p.pattern;
+  const code = patternCode(id);
+  return code ? `${p.pattern} (${code})` : p.pattern;
 }
 
 function dotClass(status) {
@@ -463,6 +485,12 @@ function goHome() {
   lessonActive = false;
   conversationMessages = [];
   sendBtn.disabled = false;
+  postLessonExchanges = 0;
+  lastCheckpointParsed = null;
+  lastCoachNote = '';
+  coachFollowUpArea.style.display = 'none';
+  askCoachBtn.style.display = '';
+  coachInput.value = '';
   const inner = document.querySelector('.chat-inner');
   if (inner) inner.remove();
   document.getElementById('lessonInputPanel').style.display = '';
@@ -566,13 +594,17 @@ async function saveAndExit() {
     const checkpointMatch = data.reply.match(/:::CHECKPOINT:::([\s\S]*?):::CHECKPOINT:::/);
     if (checkpointMatch) {
       try {
-        applyCheckpoint(JSON.parse(checkpointMatch[1].trim()));
+        const parsed = JSON.parse(checkpointMatch[1].trim());
+        lastCheckpointParsed = parsed;
+        applyCheckpoint(parsed);
       } catch (e) {
         console.error('Checkpoint parse error:', e);
+        lastCheckpointParsed = null;
         appState.learner.currentLesson += 1;
         appState.lessonState.lastCheckpoint = new Date().toISOString();
       }
     } else {
+      lastCheckpointParsed = null;
       appState.learner.currentLesson += 1;
       appState.lessonState.lastCheckpoint = new Date().toISOString();
     }
@@ -583,6 +615,13 @@ async function saveAndExit() {
     const coachNote = data.reply
       .replace(/:::CHECKPOINT:::[\s\S]*?:::CHECKPOINT:::/g, '')
       .trim();
+    lastCoachNote = coachNote;
+    postLessonExchanges = 0;
+
+    if (coachNote && appState.sessionLog.length > 0) {
+      appState.sessionLog[appState.sessionLog.length - 1].coachNote = coachNote;
+    }
+
     if (coachNote) renderCoachNote(coachNote);
 
     document.getElementById('lessonInputPanel').style.display = 'none';
@@ -635,6 +674,67 @@ function showExitConfirm() {
   document.getElementById('exitConfirmOk').addEventListener('click', () => { overlay.remove(); goHome(); });
   overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
 }
+
+askCoachBtn.addEventListener('click', () => {
+  if (postLessonExchanges >= 2) return;
+  coachFollowUpArea.style.display = '';
+  askCoachBtn.style.display = 'none';
+  coachInput.focus();
+});
+
+async function askCoach() {
+  const text = coachInput.value.trim();
+  if (!text || postLessonExchanges >= 2) return;
+
+  renderMessage('learner', text);
+  coachInput.value = '';
+  autoResize(coachInput);
+  coachSendBtn.disabled = true;
+  postLessonExchanges += 1;
+
+  const stateForApi = {
+    ...appState,
+    _postLesson: true,
+    _checkpointData: lastCheckpointParsed,
+    _coachNote: lastCoachNote
+  };
+
+  showTyping();
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: [...conversationMessages, { role: 'user', content: text }],
+        state: stateForApi
+      })
+    });
+    const data = await res.json();
+    hideTyping();
+    renderMessage('tutor', data.reply, true);
+  } catch (e) {
+    hideTyping();
+    renderMessage('tutor', 'Something went wrong. Please try again.');
+    postLessonExchanges -= 1;
+  }
+
+  coachSendBtn.disabled = false;
+
+  if (postLessonExchanges >= 2) {
+    coachFollowUpArea.style.display = 'none';
+  } else {
+    coachInput.focus();
+  }
+}
+
+coachSendBtn.addEventListener('click', askCoach);
+coachInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    askCoach();
+  }
+});
+coachInput.addEventListener('input', () => autoResize(coachInput));
 
 saveExitBtn.addEventListener('click', saveAndExit);
 exitBtn.addEventListener('click', exitLesson);

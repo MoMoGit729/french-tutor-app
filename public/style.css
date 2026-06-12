@@ -98,33 +98,33 @@ body {
 
 .sidebar-section-title {
   font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--charcoal-light);
+  color: var(--fr-blue);
   margin-bottom: 10px;
 }
 
 /* Lesson meta */
-.lesson-meta { display: flex; flex-direction: column; gap: 6px; }
-.meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-}
+.lesson-meta { display: flex; flex-direction: column; gap: 5px; }
+.meta-row { display: flex; flex-direction: row; align-items: baseline; gap: 8px; flex-wrap: wrap; }
 .meta-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--charcoal-light);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--fr-blue);
+  min-width: 66px;
   flex-shrink: 0;
 }
 .meta-value {
   font-size: 13px;
   font-weight: 500;
   color: var(--charcoal);
-  text-align: right;
+  word-break: break-word;
+  line-height: 1.4;
+  flex: 1;
 }
 
 /* Pattern legend */
@@ -142,13 +142,12 @@ body {
 /* Pattern list */
 .pattern-list { display: flex; flex-direction: column; gap: 1px; }
 .pattern-group-heading {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--fr-blue);
+  color: var(--charcoal-light);
   padding: 14px 10px 4px;
-  opacity: 0.7;
 }
 
 .pattern-item {
@@ -177,9 +176,9 @@ body {
   color: var(--charcoal-mid);
   flex: 1;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
 }
 .pattern-booklet {
   font-size: 10px;
@@ -275,10 +274,12 @@ body {
 
 /* Welcome screen */
 .welcome-screen {
-  max-width: 480px;
+  width: 100%;
+  max-width: 680px;
   margin: 80px auto 0;
   padding: 0 28px;
   text-align: center;
+  align-self: center;
 }
 .welcome-subtitle {
   font-size: 11px;
@@ -411,6 +412,12 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* Drill prompt phrases — medium-weight soft blue, not shouting */
+.message--tutor .message-bubble strong {
+  color: var(--fr-blue-light);
+  font-weight: 600;
+}
+
 /* Correct / incorrect states */
 .message-bubble.correct  { border-left: 3px solid var(--fr-blue); }
 .message-bubble.incorrect { border-left: 3px solid var(--fr-red); }
@@ -490,7 +497,7 @@ body {
 .input-area {
   border-top: 1px solid var(--gray-mid);
   background: var(--white);
-  padding: 14px 28px 18px;
+  padding: 14px 0 18px;
   flex-shrink: 0;
 }
 .input-row {
@@ -499,6 +506,7 @@ body {
   gap: 10px;
   max-width: 680px;
   margin: 0 auto;
+  padding: 0 28px;
 }
 .user-input {
   flex: 1;
@@ -525,6 +533,7 @@ body {
   justify-content: space-between;
   max-width: 680px;
   margin: 8px auto 0;
+  padding: 0 28px;
 }
 .mic-status { font-size: 12px; color: var(--charcoal-light); font-style: italic; }
 .mic-status.listening { color: var(--fr-red); }
@@ -550,13 +559,13 @@ body {
   font-size: 14px;
   color: var(--charcoal-mid);
   background: none;
-  border: 1px solid var(--gray-mid);
+  border: 1px solid var(--charcoal-light);
   border-radius: var(--radius-sm);
   padding: 10px 20px;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
 }
-.btn-secondary:hover { border-color: var(--charcoal-light); color: var(--charcoal); }
+.btn-secondary:hover { border-color: var(--charcoal-mid); color: var(--charcoal); }
 
 .icon-btn {
   background: none;
@@ -613,10 +622,25 @@ body {
 .text-btn--quiet { opacity: 0.5; text-decoration: none; }
 .text-btn--quiet:hover { opacity: 1; color: var(--charcoal-light); }
 
+.btn-ghost {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--charcoal-light);
+  background: none;
+  border: 1px solid var(--gray-dark);
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.btn-ghost:hover { border-color: var(--charcoal-light); color: var(--charcoal-mid); }
+
 .post-lesson-bar {
   padding: 16px 16px 8px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .speech-muted #speakerIcon path,
@@ -776,6 +800,15 @@ body {
   }
   .sidebar.hidden { transform: translateX(-100%); width: 88vw; min-width: 0; }
 
+  /* Progress bar — slightly larger on mobile */
+  .meta-label { font-size: 13px; }
+  .meta-value { font-size: 15px; }
+  .sidebar-section-title { font-size: 14px; }
+  .pattern-group-heading { font-size: 11px; }
+  .pattern-code { font-size: 12px; }
+  .pattern-name { font-size: 14px; }
+  .pattern-legend { font-size: 13px; }
+
   .app-header { padding: 0 16px; height: 54px; }
   .app-title { font-size: 20px; }
   .flag-icon { width: 22px; height: 22px; }
@@ -791,8 +824,8 @@ body {
   .picker-list { max-height: 52vh; }
   .picker-item-name { font-size: 13px; }
 
-  .input-area { padding: 10px 14px 20px; padding-bottom: max(20px, env(safe-area-inset-bottom)); }
-  .input-row { gap: 8px; }
+  .input-area { padding: 10px 0 20px; padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+  .input-row { gap: 8px; padding: 0 14px; }
   .user-input { font-size: 16px; padding: 13px 14px; }
   .mic-btn, .send-btn { width: 50px; height: 50px; }
   .send-btn { min-width: 50px; }

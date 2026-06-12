@@ -109,6 +109,37 @@
       "notes": ""
     },
     {
+      "id": "b1-passe-compose-etre",
+      "booklet": "Paul Noble 1",
+      "section": "Passé Composé with Être",
+      "pattern": "Passé composé with être: aller, venir, partir, arriver, rester (+ agreement rule)",
+      "examples": [
+        {
+          "english": "I went.",
+          "french": "Je suis allé."
+        },
+        {
+          "english": "She went.",
+          "french": "Elle est allée."
+        },
+        {
+          "english": "He came.",
+          "french": "Il est venu."
+        },
+        {
+          "english": "They arrived (m).",
+          "french": "Ils sont arrivés."
+        },
+        {
+          "english": "She stayed.",
+          "french": "Elle est restée."
+        }
+      ],
+      "status": "exposure only",
+      "lastPracticed": "",
+      "notes": ""
+    },
+    {
       "id": "b1-questions-est-ce-que",
       "booklet": "Paul Noble 1",
       "section": "Questions",
@@ -412,37 +443,6 @@
         {
           "english": "Do you want to go there?",
           "french": "Voulez-vous y aller ?"
-        }
-      ],
-      "status": "exposure only",
-      "lastPracticed": "",
-      "notes": ""
-    },
-    {
-      "id": "b1-passe-compose-etre",
-      "booklet": "Paul Noble 1",
-      "section": "Passé Composé with Être",
-      "pattern": "Passé composé with être: aller, venir, partir, arriver, rester (+ agreement rule)",
-      "examples": [
-        {
-          "english": "I went.",
-          "french": "Je suis allé."
-        },
-        {
-          "english": "She went.",
-          "french": "Elle est allée."
-        },
-        {
-          "english": "He came.",
-          "french": "Il est venu."
-        },
-        {
-          "english": "They arrived (m).",
-          "french": "Ils sont arrivés."
-        },
-        {
-          "english": "She stayed.",
-          "french": "Elle est restée."
         }
       ],
       "status": "exposure only",

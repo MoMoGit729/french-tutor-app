@@ -121,13 +121,31 @@
             </button>
           </div>
           <div class="input-footer">
-            <button class="text-btn" id="saveAndExit">Save &amp; exit</button>
-            <button class="text-btn text-btn--quiet" id="exitLesson">Exit</button>
+            <button class="btn-secondary" id="saveAndExit">Save &amp; exit</button>
+            <button class="btn-ghost" id="exitLesson">Exit</button>
             <span class="mic-status" id="micStatus"></span>
           </div>
         </div>
         <div id="postLessonPanel" style="display:none">
+          <div id="coachFollowUpArea" style="display:none">
+            <div class="input-row">
+              <textarea
+                id="coachInput"
+                class="user-input"
+                placeholder="Ask Claudette…"
+                rows="1"
+                autocomplete="off"
+                spellcheck="false"
+              ></textarea>
+              <button class="send-btn" id="coachSendBtn">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="2" y1="10" x2="18" y2="10"/><polyline points="12,4 18,10 12,16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
           <div class="post-lesson-bar">
+            <button class="btn-secondary" id="askCoachBtn">Ask a follow-up</button>
             <button class="btn-primary" id="returnHome">Start new session</button>
           </div>
         </div>
