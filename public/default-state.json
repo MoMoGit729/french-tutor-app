@@ -44,7 +44,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-passe-compose-avoir",
@@ -75,7 +76,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Café é trick: take any -ation word (réservation), chop off -ation, add é to get the past participle (réservé, préparé, visité). Three-into-one: 'I reserved', 'I have reserved', and 'I did reserve' are all J'ai réservé in French. 1,250 -ion words: any English -ion word is also a French word (réservation, invitation, décoration)."
     },
     {
       "id": "b1-avoir-conjugations",
@@ -106,7 +108,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Default ils: a mixed group always uses ils, even 99 women and 1 man — if in doubt, use ils."
     },
     {
       "id": "b1-passe-compose-etre",
@@ -137,7 +140,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Coming and going rule: use être (not avoir) in the past for any verb involving going or coming — aller, venir, partir, arriver, rester, sortir, monter, descendre, naître, mourir. Rester exception: rester also uses être — 'after going somewhere, you need somewhere to stay.' Fiancé rule: the past participle agrees with the subject like fiancé/fiancée — one man = allé, one woman = allée, group of men/mixed = allés, all-female group = allées."
     },
     {
       "id": "b1-questions-est-ce-que",
@@ -168,7 +172,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Three ways to ask questions: (1) inversion — Avez-vous réservé?; (2) est-ce que — put it in front of any statement to make it a question; (3) rising intonation — raise pitch at end of a statement (spoken only, not in writing)."
     },
     {
       "id": "b1-questions-inversion",
@@ -199,7 +204,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Three ways to ask questions: (1) inversion — Avez-vous réservé?; (2) est-ce que — Est-ce que vous avez réservé?; (3) rising intonation (spoken only). Inversion is preferred in formal written French."
     },
     {
       "id": "b1-negatives-ne-pas",
@@ -230,7 +236,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-pronouns-le-la-les",
@@ -261,7 +268,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Have-stealing rule: 'have' always steals the pronoun and places it directly in front of itself — Je l'ai préparé (not 'J'ai le préparé'). Pronouns like it, me, you, him, her, them all move in front of avoir in the past tense."
     },
     {
       "id": "b1-pronoun-en",
@@ -292,7 +300,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Have-stealing rule applies to en too — en goes directly before avoir: J'en ai mangé (not 'J'ai mangé en')."
     },
     {
       "id": "b1-je-voudrais",
@@ -323,7 +332,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-vouloir",
@@ -354,7 +364,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Silent ent: ils veulent sounds like 'vurl' — the 'ent' ending is always silent when it comes at the end of a verb after 'they'."
     },
     {
       "id": "b1-pouvoir",
@@ -385,7 +396,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Silent ent: ils peuvent sounds like 'perv' — the 'ent' ending is always silent after 'they'."
     },
     {
       "id": "b1-devoir",
@@ -416,7 +428,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Silent ent: ils doivent sounds like 'dwoirve' — the 'ent' ending is always silent after 'they'."
     },
     {
       "id": "b1-y-aller",
@@ -447,7 +460,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-present-tense-er",
@@ -478,7 +492,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Chop the R: for je/il/elle/tu/ils/elles — chop the r off the infinitive (préparer → prépare, manger → mange). Swap the R: for vous swap r for z (préparez); for nous swap r for ons (préparons). Silent ent: the ils/elles form sounds the same as je/il/elle — 'ent' is always silent (ils préparent sounds like 'prépare')."
     },
     {
       "id": "b1-present-tense-non-er",
@@ -509,7 +524,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Chop the R + following letters: for -ir/-re verbs, chop the r and any letters after it (attendre → attend, finir → fini). Swap the R: for vous swap r+following for ez (vous attendez); for nous swap for ons (nous attendons)."
     },
     {
       "id": "b1-future-aller",
@@ -540,7 +556,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-future-will",
@@ -571,7 +588,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Hook onto the R: form 'will' by hooking the 'have/has' endings onto the r at the end of the infinitive (manger+ai=mangerai, +a=mangera, +ez=mangerez, +ons=mangerons, +ont=mangeront, +as=mangeras). Ray/Ron/Ra: the three ending sounds — Ray (rai/rez = I/you will), Ron (rons/ront = we/they will), Ra (ra/ras = he-she/tu will) — 'Ray, Ron or the Sun God Ra leading you into the future.'"
     },
     {
       "id": "b1-travel-hotel",
@@ -602,7 +620,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-travel-restaurant",
@@ -633,7 +652,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-travel-directions",
@@ -664,7 +684,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-travel-train",
@@ -695,7 +716,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-travel-doctor",
@@ -726,7 +748,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b1-numbers",
@@ -757,7 +780,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b2-intention-de",
@@ -788,7 +812,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "J'ai + noun + de family: all these constructions share one structure — J'ai [noun] de [infinitive]. Literal anchor: 'I have the intention of.' Gateway to the whole PN2 J'ai family."
     },
     {
       "id": "b2-envie-de",
@@ -819,7 +844,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "J'ai + noun + de family: same structure throughout PN2. Literal anchor: 'I have envy of' → I feel like."
     },
     {
       "id": "b2-peur-de",
@@ -850,7 +876,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "J'ai + noun + de family. Literal anchor: 'I have fear of' → I'm scared of."
     },
     {
       "id": "b2-horreur-de",
@@ -881,7 +908,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "J'ai + noun + de family. Literal anchor: 'I have horror of' → I can't stand."
     },
     {
       "id": "b2-besoin-de",
@@ -912,7 +940,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "J'ai + noun + de family. Literal anchor: 'I have need of' → I need."
     },
     {
       "id": "b2-etais-sur-le-point-de",
@@ -943,7 +972,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Literal anchor: 'I was at the point of' → I was about to."
     },
     {
       "id": "b2-etais-en-train-de",
@@ -974,7 +1004,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Literal anchor: 'I was in the middle of / in the process of' (en train de = in the middle of doing)."
     },
     {
       "id": "b2-a-cause-de-grace-a",
@@ -1005,7 +1036,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Literal anchors: à cause de = 'at the cause of' → because of; grâce à = 'thanks to'."
     },
     {
       "id": "b2-imparfait-vs-passe-compose",
@@ -1036,7 +1068,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Two past tenses rule: passé composé for a single completed instance (I ate there yesterday); imparfait for repeated or ongoing past (I used to eat there every day). Single instance vs. repeated is the key distinction."
     },
     {
       "id": "b2-imparfait-forms",
@@ -1067,7 +1100,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": ""
     },
     {
       "id": "b2-time-markers",
@@ -1098,7 +1132,8 @@
       ],
       "status": "exposure only",
       "lastPracticed": "",
-      "notes": ""
+      "notes": "",
+      "teachingDevice": "Imparfait trigger words: toujours, tous les jours, tous les matins, tous les soirs, tous les ans — these time markers always signal habitual/repeated past and call for the imparfait automatically."
     }
   ],
   "recurringErrors": [],

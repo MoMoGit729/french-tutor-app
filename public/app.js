@@ -162,11 +162,14 @@ function initVoices() {
 function speak(text) {
   if (!speechEnabled || !text.trim()) return;
   speechSynthesis.cancel();
-  const utt = new SpeechSynthesisUtterance(text);
-  utt.lang = 'fr-FR';
-  utt.rate = 0.9;
-  if (frenchVoice) utt.voice = frenchVoice;
-  speechSynthesis.speak(utt);
+  // 150ms gap prevents Chrome/Edge from clipping the first word after cancel()
+  setTimeout(() => {
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang = 'fr-FR';
+    utt.rate = 0.9;
+    if (frenchVoice) utt.voice = frenchVoice;
+    speechSynthesis.speak(utt);
+  }, 150);
 }
 
 function initRecognition() {
