@@ -429,11 +429,11 @@ body {
   border: none;
   cursor: pointer;
   color: var(--charcoal-light);
-  padding: 0 2px;
+  padding: 0 4px;
   line-height: 1;
   vertical-align: middle;
   transition: color 0.15s;
-  font-size: 12px;
+  font-size: 1em;
 }
 .replay-btn:hover { color: var(--fr-blue); }
 
